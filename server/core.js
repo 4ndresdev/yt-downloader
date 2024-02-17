@@ -20,7 +20,7 @@ const getAudio = async (url, socket, video = false) => {
         let info = await ytdl.getBasicInfo(url);
         let ext = video ? ".mp4" : ".mp3";
         const fileName = `${stringFormat(info?.videoDetails?.title)}${ext}`;
-        const filePath = path.join(__dirname, '../../public/', fileName);
+        const filePath = path.join(process.cwd(), '../../public/', fileName);
         const file = fs.createWriteStream(filePath);
         media.pipe(file);
         file.on('finish', () => {
