@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
 });
 
 app.get("/download/:fileName", (req, res) => {
-    const pathFile = path.join(__dirname, '../public/', req.params.fileName);
+    const pathFile = path.join(__dirname, req.params.fileName);
     res.download(pathFile);
 });
 
