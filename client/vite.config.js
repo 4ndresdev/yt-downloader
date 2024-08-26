@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/socket.io': {
-        target: 'https://yt-downloader-tr23.onrender.com',
+        target: '/',
         ws: true,
       }
     }
