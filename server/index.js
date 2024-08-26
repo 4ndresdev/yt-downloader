@@ -11,7 +11,7 @@ const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const httpServer = createServer(app);
 const io = new Server(httpServer);
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, "../client/dist")));
